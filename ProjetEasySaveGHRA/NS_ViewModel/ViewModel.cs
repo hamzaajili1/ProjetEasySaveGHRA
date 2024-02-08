@@ -8,6 +8,6 @@ namespace ProjetEasySaveGHRA.NS_ViewModel
 {
     internal class ViewModel
     {
-
+        
     }
 }
