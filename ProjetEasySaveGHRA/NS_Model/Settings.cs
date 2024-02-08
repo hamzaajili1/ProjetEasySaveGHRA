@@ -1,12 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ProjetEasySaveGHRA.NS_Model
+namespace EasySave.NS_Model
 {
-    internal class Settings
+    class Settings
     {
+        // --- Attributes ---
+        public static Settings instance { get; set; }
+        public Languages language { get; set; }
+
+
+        // --- Constructors ---
+        // Constructor used by LoadSettings
+        private Settings() { }
+
+
+        // --- Methods ----
+        // Singleton 
+        public static Settings GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Settings();
+            }
+            return instance;
+        }
+
+        // Update Settings
+        public void Update(Languages _language)
+        {
+            this.language = _language;
+        }
     }
 }
