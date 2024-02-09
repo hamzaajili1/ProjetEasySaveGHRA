@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using EasySave.NS_View;
 using EasySave.NS_Model;
 using System.Text.Json;
-using ProjetEasySaveGHRA.NS_Model;
 
 namespace EasySave.NS_ViewModel
 {
