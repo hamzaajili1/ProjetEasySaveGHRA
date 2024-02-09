@@ -41,43 +41,41 @@ namespace EasySave.NS_Model
         // Save Log 
         public void SaveLog(DateTime _startDate, string _src, string _dst, long _size, bool isError)
         {
-            // Prepare dates
-            string today = DateTime.Now.ToString("yyyy-MM-dd");
-            string startTime = _startDate.ToString("yyyy-MM-dd_HH-mm-ss");
-            string elapsedTime = (DateTime.Now - _startDate).ToString();
-
-            if (isError)
+            try
             {
-                elapsedTime = "-1";
-            }
+                // Prepare dates
+                string today = DateTime.Now.ToString("yyyy-MM-dd");
+                string startTime = _startDate.ToString("yyyy-MM-dd_HH-mm-ss");
+                string elapsedTime = isError ? "-1" : (DateTime.Now - _startDate).ToString();
 
-            // Create File if it doesn't exists
-            if (!Directory.Exists("./Logs"))
-            {// Var that will contains Logs File Content
-                var logs = new List<Log>();
+                // Ensure the Logs directory exists
+                string logsDirectoryPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs");
+                if (!Directory.Exists(logsDirectoryPath))
+                {
+                    Directory.CreateDirectory(logsDirectoryPath);
+                }
+
+                string logFilePath = Path.Combine(logsDirectoryPath, $"{today}.json");
+                List<Log> logs = new List<Log>();
 
                 // Get Logs File Content if it Exists
-                if (File.Exists($"./Logs/{today}.json"))
+                if (File.Exists(logFilePath))
                 {
-                    logs = JsonSerializer.Deserialize<List<Log>>(File.ReadAllText($"./Logs/{today}.json"));
+                    string fileContent = File.ReadAllText(logFilePath);
+                    logs = JsonSerializer.Deserialize<List<Log>>(fileContent) ?? new List<Log>();
                 }
 
                 // Add Current Backuped File Log
-                logs.Add(new Log($"{this.name}", $"{_src}", $"{_dst}", $"{_size}", $"{startTime}", $"{elapsedTime}"));
+                logs.Add(new Log(name, _src, _dst, _size.ToString(), startTime, elapsedTime));
 
                 // Write Logs File
-                File.WriteAllText($"./Logs/{today}.json", JsonSerializer.Serialize(logs, this.jsonOptions));
-
-                /*
-                // Log in .txt version
-                File.AppendAllText($"./Logs/{today}.txt", $"{startTime}: {this.name}" +
-                    $"\nSource: {_src}" +
-                    $"\nDestination: {_dst}" +
-                    $"\nSize (Bytes): {_size}" +
-                    $"\nElapsed Time: {elapsedTime}" +
-                    "\n\r\n");
-                */
+                File.WriteAllText(logFilePath, JsonSerializer.Serialize(logs, jsonOptions));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while saving the log: {ex.Message}");
             }
         }
+
     }
 }
