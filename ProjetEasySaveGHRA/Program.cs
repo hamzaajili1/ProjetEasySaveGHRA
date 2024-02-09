@@ -1,12 +1,16 @@
-﻿using System;
+﻿using EasySave.NS_ViewModel;
 
-namespace ProjetEasySaveGHRA
+namespace EasySave
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Init Program
+            ViewModel viewModel = new ViewModel();
+
+            // Run Program
+            viewModel.Run();
         }
     }
 }
