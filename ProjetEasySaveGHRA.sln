@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetEasySaveGHRA", "ProjetEasySaveGHRA\ProjetEasySaveGHRA.csproj", "{B896B164-9200-4579-BD73-20F66D3FBAAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetEasySaveGHRA", "ProjetEasySaveGHRA\ProjetEasySaveGHRA.csproj", "{B896B164-9200-4579-BD73-20F66D3FBAAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasySave", "..\..\..\Downloads\Version 3.0\ProjetEASYSAVEHARG\EasySave.csproj", "{F2DE1E41-6C38-4303-B19B-DF8610FA895D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PanelAdmin", "..\..\..\Downloads\Version 3.0\PanelAdmin\PanelAdmin.csproj", "{F2B3737D-6180-4D25-9FF0-898E2000786F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoSoft", "..\..\..\Downloads\Version 3.0\CryptoSoftHARG\CryptoSoft\CryptoSoft.csproj", "{410727C5-F3F4-4330-9DC6-1BBC8F05E0C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{B896B164-9200-4579-BD73-20F66D3FBAAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B896B164-9200-4579-BD73-20F66D3FBAAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B896B164-9200-4579-BD73-20F66D3FBAAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2DE1E41-6C38-4303-B19B-DF8610FA895D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2DE1E41-6C38-4303-B19B-DF8610FA895D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2DE1E41-6C38-4303-B19B-DF8610FA895D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2DE1E41-6C38-4303-B19B-DF8610FA895D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2B3737D-6180-4D25-9FF0-898E2000786F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2B3737D-6180-4D25-9FF0-898E2000786F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2B3737D-6180-4D25-9FF0-898E2000786F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2B3737D-6180-4D25-9FF0-898E2000786F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{410727C5-F3F4-4330-9DC6-1BBC8F05E0C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410727C5-F3F4-4330-9DC6-1BBC8F05E0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410727C5-F3F4-4330-9DC6-1BBC8F05E0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410727C5-F3F4-4330-9DC6-1BBC8F05E0C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
